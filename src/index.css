@@ -1,6 +1,10 @@
-:root {
-  /* Identidad visual Huellitas de Shiro */
+@layer theme, base, components, utilities;
+@import "tailwindcss/theme.css" layer(theme);
+@import "tailwindcss/utilities.css" layer(utilities);
 
+/* Identidad visual Supermercado Shiro */
+
+:root {
   --color-primario: #17324D;
   --color-secundario: #246B9B;
   --color-acento: #59B9E8;
@@ -59,9 +63,11 @@ p {
 
 /* Enlaces */
 
-a {
-  color: inherit;
-  text-decoration: none;
+@layer base {
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
 }
 
 /* Botones */

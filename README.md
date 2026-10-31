@@ -1,20 +1,20 @@
-# 🐾 Huellitas de Shiro
+# 🛒 Supermercado Shiro
 
-### Tienda de productos para mascotas
+### Sistema de gestión de inventario desarrollado con React
 
-**Todo para quienes dejan huellas en tu corazón.** 🐶💙
+**Todo lo que necesitas, en un solo lugar.** 🐶💙
 
 ---
 
 ## 📖 Descripción del proyecto
 
-**Huellitas de Shiro** es una aplicación web desarrollada con React que simula una tienda especializada en productos para mascotas.
+**Supermercado Shiro** es una aplicación web desarrollada con React que simula un sistema de gestión de inventario para un supermercado.
 
-El proyecto permite visualizar un inventario de productos, consultar información sobre la tienda y acceder a una sección de preguntas frecuentes.
+La plataforma permite consultar los productos disponibles, registrar nuevos artículos mediante un formulario y visualizar información actualizada del inventario.
 
-La navegación se implementa mediante **React Router**, permitiendo desplazarse entre diferentes vistas sin necesidad de recargar completamente la página.
+La aplicación utiliza **React Router** para gestionar la navegación entre páginas y **React Context junto con useState** para compartir el inventario entre distintos componentes.
 
-La aplicación incorpora una identidad visual personalizada, inspirada en Shiro, la mascota que da nombre a nuestra tienda.
+La interfaz incorpora **Tailwind CSS**, estilos personalizados y una identidad visual inspirada en Shiro, la mascota del supermercado.
 
 Este proyecto fue desarrollado como parte de la asignatura **Desarrollo Frontend II (PFY2202)** de Duoc UC.
 
@@ -24,18 +24,19 @@ Este proyecto fue desarrollado como parte de la asignatura **Desarrollo Frontend
 
 ### Objetivo general
 
-Desarrollar una aplicación web utilizando React y React Router, implementando una navegación fluida entre diferentes componentes y aplicando buenas prácticas de desarrollo frontend.
+Desarrollar una aplicación web de gestión de inventario utilizando tecnologías de React, implementando navegación, gestión global de estados y un framework CSS.
 
 ### Objetivos específicos
 
 * Implementar una aplicación de página única (SPA).
-* Configurar rutas utilizando React Router.
-* Desarrollar componentes funcionales reutilizables.
-* Gestionar información mediante arreglos de objetos JavaScript.
-* Renderizar información dinámicamente mediante el método `.map()`.
-* Incorporar una interfaz responsive utilizando CSS.
-* Aplicar principios básicos de accesibilidad web.
-* Organizar el proyecto mediante una estructura de carpetas y archivos.
+* Configurar la navegación mediante React Router.
+* Compartir información mediante React Context.
+* Administrar el inventario utilizando useState.
+* Desarrollar un formulario para registrar productos.
+* Mostrar los artículos registrados en una tabla dinámica.
+* Validar los datos ingresados por el usuario.
+* Implementar Tailwind CSS para mejorar la interfaz.
+* Aplicar principios básicos de accesibilidad y diseño responsive.
 
 ---
 
@@ -43,70 +44,96 @@ Desarrollar una aplicación web utilizando React y React Router, implementando u
 
 ### 🏠 Inicio
 
-La página principal presenta nuestra tienda e incluye:
+La página principal incluye una presentación del supermercado, ilustraciones de Shiro y un panel de gestión con información del inventario.
 
-* Logotipo personalizado de Huellitas de Shiro.
-* Ilustración de bienvenida de nuestra mascota.
-* Presentación general del establecimiento.
-* Inventario dinámico de productos.
-* Información sobre categorías, precios y existencias disponibles.
-* Formato monetario en pesos chilenos (CLP).
+El panel muestra tres indicadores:
 
-### 🐶 ¿Quiénes somos?
+* Cantidad de productos registrados.
+* Número de categorías disponibles.
+* Total de unidades en stock.
 
-Sección informativa que presenta:
+También incorpora accesos directos a las páginas de inventario y registro de productos.
 
-* Identidad de nuestra tienda.
-* Propósito del establecimiento.
-* Compromiso con el bienestar de las mascotas.
-* Ilustración personalizada de Shiro.
+Los indicadores se actualizan automáticamente cuando cambia el estado global.
+
+### 📦 Inventario
+
+Permite consultar todos los productos registrados mediante una tabla dinámica.
+
+Cada artículo contiene los siguientes datos:
+
+| Campo  | Descripción                        |
+| ------ | ---------------------------------- |
+| Nombre | Identificación del producto.       |
+| Marca  | Marca comercial.                   |
+| Tipo   | Categoría del artículo.            |
+| Precio | Valor expresado en pesos chilenos. |
+| Stock  | Cantidad de unidades disponibles.  |
+
+La página también muestra la cantidad total de productos registrados y un mensaje informativo cuando el inventario está vacío.
+
+### ➕ Agregar producto
+
+Permite registrar artículos mediante un formulario.
+
+El formulario incorpora validaciones para impedir el ingreso de datos incompletos, precios no válidos y cantidades negativas.
+
+Cuando un producto se registra correctamente, se incorpora al estado global y aparece automáticamente en el inventario.
+
+La aplicación muestra un mensaje de confirmación y proporciona un enlace para consultar los productos registrados.
+
+### 🐾 ¿Quiénes somos?
+
+Presenta información general sobre Supermercado Shiro, su propósito y su propuesta de servicio.
+
+Incluye una ilustración personalizada de Shiro.
 
 ### ❓ Preguntas frecuentes
 
-Sección interactiva que permite consultar información sobre:
+Contiene respuestas a consultas habituales sobre los productos, precios y funcionamiento de la plataforma.
 
-* Productos disponibles.
-* Disponibilidad del inventario.
-* Moneda utilizada para los precios.
-* Funcionamiento de la plataforma.
+Se utilizan elementos HTML semánticos `details` y `summary` para mostrar respuestas desplegables.
 
-Las preguntas utilizan elementos HTML `<details>` y `<summary>`, permitiendo desplegar sus respuestas.
+### 🔎 Página no encontrada
 
-### 🧭 Navegación
+La aplicación incorpora una ruta comodín que muestra una página informativa cuando se intenta acceder a una dirección inexistente.
 
-La aplicación incorpora un menú inferior desarrollado con React Router que permite acceder a las tres páginas.
-
-El menú identifica visualmente la ruta seleccionada mediante el componente `NavLink`.
+También proporciona un enlace para regresar al inicio.
 
 ---
 
 ## 🛠️ Tecnologías utilizadas
 
-| Tecnología   | Descripción                                      |
-| ------------ | ------------------------------------------------ |
-| HTML5        | Estructuración semántica del contenido.          |
-| CSS3         | Estilos, distribución y diseño responsive.       |
-| JavaScript   | Lógica de programación y gestión de datos.       |
-| React        | Construcción de interfaces mediante componentes. |
-| React Router | Gestión de rutas y navegación SPA.               |
-| Vite         | Entorno de desarrollo y compilación.             |
-| ESLint       | Análisis estático de código.                     |
-| Git          | Control de versiones.                            |
-| GitHub       | Alojamiento del repositorio.                     |
+| Tecnología            | Utilización                                  |
+| --------------------- | -------------------------------------------- |
+| HTML5                 | Estructura semántica del contenido.          |
+| CSS3                  | Estilos personalizados y diseño responsive.  |
+| Tailwind CSS          | Utilidades de diseño y componentes visuales. |
+| JavaScript            | Lógica y manipulación de datos.              |
+| React                 | Desarrollo de componentes e interfaces.      |
+| React Router          | Navegación entre páginas.                    |
+| React Context         | Distribución del estado global.              |
+| useState              | Administración del inventario y formulario.  |
+| useContext            | Acceso al estado compartido.                 |
+| useMemo y useCallback | Optimización de referencias del contexto.    |
+| Vite                  | Servidor de desarrollo y compilación.        |
+| ESLint                | Análisis estático del código.                |
+| Git y GitHub          | Control de versiones y publicación.          |
 
 ---
 
 ## 📂 Estructura del proyecto
 
 ```text
-huellitas-de-shiro/
+supermercado-shiro/
 │
 ├── public/
+│   └── favicon.svg
 │
 ├── src/
 │   ├── assets/
 │   │   └── images/
-│   │       ├── logo-huellitas-de-shiro.png
+│   │       ├── logo-supermercado-shiro.png
 │   │       ├── shiro-bienvenida.png
 │   │       ├── shiro-nosotros.png
 │   │       └── shiro-preguntas.png
@@ -114,13 +141,23 @@ huellitas-de-shiro/
 │   ├── components/
 │   │   └── MenuNavegacion.jsx
 │   │
+│   ├── context/
+│   │   ├── InventarioContext.js
+│   │   └── InventarioProvider.jsx
+│   │
 │   ├── data/
 │   │   └── productos.js
 │   │
+│   ├── hooks/
+│   │   └── useInventario.js
+│   │
 │   ├── pages/
 │   │   ├── Inicio.jsx
+│   │   ├── Inventario.jsx
+│   │   ├── AgregarProducto.jsx
 │   │   ├── QuienesSomos.jsx
-│   │   └── PreguntasFrecuentes.jsx
+│   │   ├── PreguntasFrecuentes.jsx
+│   │   └── PaginaNoEncontrada.jsx
 │   │
 │   ├── App.css
 │   ├── App.jsx
@@ -140,55 +177,45 @@ huellitas-de-shiro/
 
 ## ⚙️ Instalación y ejecución
 
-### Requisitos previos
+### Requisitos
 
-Para ejecutar el proyecto es necesario contar con Node.js y npm en versiones compatibles con Vite.
+Disponer de Node.js y npm en versiones compatibles con el proyecto.
 
-### 1. Clonar el repositorio
+### 1. Instalar dependencias
 
-```bash
-git clone https://github.com/PanshoOw/Huellitas-de-Shiro.git
-```
-
-### 2. Acceder al directorio
-
-```bash
-cd Huellitas-de-Shiro
-```
-
-### 3. Instalar las dependencias
+Desde la carpeta del proyecto:
 
 ```bash
 npm install
 ```
 
-### 4. Iniciar el servidor de desarrollo
+### 2. Iniciar el servidor de desarrollo
 
 ```bash
 npm run dev
 ```
 
-La terminal mostrará la dirección local de la aplicación.
+Vite mostrará la dirección local donde se ejecuta la aplicación.
 
-Generalmente será:
+Generalmente:
 
 ```text
 http://localhost:5173/
 ```
 
-### 5. Ejecutar ESLint
+### 3. Comprobar el código mediante ESLint
 
 ```bash
 npm run lint
 ```
 
-### 6. Generar la compilación de producción
+### 4. Generar la compilación de producción
 
 ```bash
 npm run build
 ```
 
-### 7. Visualizar la compilación de producción
+### 5. Visualizar la compilación
 
 ```bash
 npm run preview
@@ -196,53 +223,69 @@ npm run preview
 
 ---
 
-## 🧩 Arquitectura y componentes
+## 🧩 Arquitectura y gestión del estado
 
-El proyecto utiliza una estructura basada en componentes funcionales de React.
+La aplicación utiliza componentes funcionales de React organizados según sus responsabilidades.
 
-**App.jsx:** contiene la estructura principal de la aplicación y define las rutas disponibles.
+**InventarioProvider.jsx** administra la lista de productos mediante `useState` y proporciona la función `agregarProducto()`.
 
-**MenuNavegacion.jsx:** implementa los enlaces de navegación utilizando `NavLink`.
+**InventarioContext.js** define el contexto utilizado para compartir la información.
 
-**Inicio.jsx:** representa la página principal y muestra dinámicamente el inventario.
+**useInventario.js** es un hook personalizado que facilita el acceso al contexto desde los componentes.
 
-**QuienesSomos.jsx:** presenta información sobre la tienda.
+**AgregarProducto.jsx** administra los datos del formulario mediante estado local y registra los nuevos artículos en el contexto global.
 
-**PreguntasFrecuentes.jsx:** contiene las preguntas y respuestas desplegables.
+**Inventario.jsx** consulta el estado global y representa los productos mediante una tabla dinámica.
 
-**productos.js:** almacena los datos de demostración del inventario mediante un arreglo de objetos JavaScript.
+**Inicio.jsx** utiliza el mismo estado para calcular los indicadores del panel de gestión.
 
-Esta organización permite separar responsabilidades y facilita el mantenimiento del proyecto.
+De esta forma, las páginas pueden consultar y actualizar información compartida sin mantener copias independientes del inventario.
 
 ---
 
 ## 🎨 Identidad visual
 
-La aplicación utiliza una paleta de colores basada principalmente en azul marino y celeste suave.
+Supermercado Shiro utiliza una identidad visual basada en azul marino, celeste y blanco.
 
-| Color           | Código    |
-| --------------- | --------- |
-| Azul marino     | `#17324D` |
-| Azul intermedio | `#246B9B` |
-| Celeste         | `#59B9E8` |
-| Celeste claro   | `#EEF8FF` |
-| Blanco          | `#FFFFFF` |
+| Color               | Código    |
+| ------------------- | --------- |
+| Azul marino         | `#17324D` |
+| Azul intermedio     | `#246B9B` |
+| Celeste             | `#59B9E8` |
+| Fondo celeste claro | `#EEF8FF` |
+| Blanco              | `#FFFFFF` |
 
-Las ilustraciones personalizadas de Shiro se utilizan para reforzar la identidad visual de la tienda.
+La identidad visual incorpora un logotipo personalizado y distintas ilustraciones de Shiro.
 
 ---
 
-## ♿ Accesibilidad y diseño responsive
+## ♿ Accesibilidad
 
-Durante el desarrollo se consideraron las siguientes prácticas:
+Durante el desarrollo se incorporaron prácticas orientadas a mejorar la accesibilidad:
 
-* Uso de etiquetas HTML semánticas.
-* Navegación mediante enlaces compatibles con teclado.
-* Indicadores visuales de foco.
-* Descripciones alternativas para las imágenes.
-* Configuración del idioma del documento en español.
-* Adaptación de la interfaz a diferentes tamaños de pantalla.
-* Consideración de las preferencias de movimiento reducido del usuario.
+* Estructura HTML semántica.
+* Etiquetas asociadas a los campos del formulario.
+* Textos alternativos para las imágenes.
+* Gestión del foco al cambiar de ruta.
+* Títulos dinámicos para las distintas páginas.
+* Mensajes de confirmación y error.
+* Navegación mediante teclado.
+* Diseño adaptable a diferentes tamaños de pantalla.
+* Consideración de preferencias de movimiento reducido.
+
+---
+
+## 📌 Consideraciones técnicas
+
+El inventario utiliza inicialmente seis productos de demostración.
+
+Los artículos registrados mediante el formulario se almacenan temporalmente en el estado de React.
+
+**Actualmente, los productos agregados no persisten después de recargar completamente la aplicación.** Al recargar, se restablece el inventario inicial.
+
+La plataforma no incorpora una base de datos, autenticación ni procesamiento de pagos.
+
+Los productos y precios corresponden a información de demostración utilizada con fines académicos.
 
 ---
 
@@ -252,24 +295,12 @@ Durante el desarrollo se consideraron las siguientes prácticas:
 **Asignatura:** Desarrollo Frontend II
 **Código:** PFY2202
 **Experiencia de aprendizaje:** 1
-**Semana:** 1
-**Actividad:** Utilizando tecnologías avanzadas de React en sitios web
+**Semana:** 2
+**Actividad:** Implementando gestión de estado en componentes frontend con React
 **Modalidad:** Individual
 
-El proyecto utiliza la temática de una tienda de mascotas, autorizada por el docente como adaptación del caso original.
-
 ---
 
-## 📌 Consideraciones
+## 🐶 Supermercado Shiro
 
-Este proyecto fue desarrollado exclusivamente con fines académicos.
-
-Los productos, precios y cantidades disponibles corresponden a datos ficticios utilizados para demostrar el funcionamiento del inventario.
-
-La aplicación no incluye procesamiento de pagos, autenticación de usuarios ni operaciones comerciales reales.
-
----
-
-## 🐾 Huellitas de Shiro
-
-**Porque cada huellita deja una historia.** 💙
+**Todo lo que necesitas, en un solo lugar.** 💙

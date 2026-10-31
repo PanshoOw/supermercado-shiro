@@ -1,71 +1,60 @@
 import shiroPreguntas from '../assets/images/shiro-preguntas.png'
 
 function PreguntasFrecuentes() {
-    return (
-        <section className="pagina-informativa">
-        <h2>Preguntas frecuentes</h2>
+  return (
+    <section className="pagina-informativa">
+      <h2>Preguntas frecuentes</h2>
 
+      <p>
+        Encuentra respuestas a las consultas más habituales
+        sobre nuestro supermercado y sus productos.
+      </p>
+
+      <img
+        src={shiroPreguntas}
+        alt="Shiro, mascota del supermercado, con expresión curiosa"
+        className="preguntas-frecuentes__imagen"
+        width="900"
+        height="900"
+        loading="lazy"
+      />
+
+      <details>
+        <summary>¿Qué productos ofrece Supermercado Shiro?</summary>
         <p>
-            Encuentra respuestas a las consultas
-            más habituales de nuestros clientes.
+          Disponemos de productos de alimentación, bebidas,
+          artículos de limpieza, higiene personal y otros
+          productos necesarios para el hogar.
         </p>
+      </details>
 
-        <img
-            src={shiroPreguntas}
-            alt="Shiro sentado con expresión curiosa y signos de interrogación azules"
-            className="preguntas-frecuentes__imagen"
-            width="900"
-            height="900"
-            loading="lazy"
-        />
+      <details>
+        <summary>¿Cómo puedo consultar los productos disponibles?</summary>
+        <p>
+          Puedes consultar todos los artículos disponibles
+          desde la sección Inventario de nuestro menú
+          de navegación.
+        </p>
+      </details>
 
-        <details>
-            <summary>
-            ¿Qué productos ofrece Huellitas de Shiro?
-            </summary>
+      <details>
+        <summary>¿Los precios están expresados en pesos chilenos?</summary>
+        <p>
+          Sí. Todos los precios de nuestro inventario
+          están expresados en pesos chilenos (CLP).
+        </p>
+      </details>
 
-            <p>
-            Ofrecemos alimentos, juguetes, accesorios,
-            artículos de higiene y productos de
-            descanso para mascotas.
-            </p>
-        </details>
-
-        <details>
-            <summary>
-            ¿Cómo puedo consultar la disponibilidad?
-            </summary>
-
-            <p>
-            Puedes revisar nuestro inventario
-            desde la página principal.
-            </p>
-        </details>
-
-        <details>
-            <summary>
-            ¿Los precios están expresados en pesos chilenos?
-            </summary>
-
-            <p>
-            Sí. Los precios de nuestro catálogo
-            están expresados en pesos chilenos (CLP).
-            </p>
-        </details>
-
-        <details>
-            <summary>
-            ¿Puedo comprar directamente desde la página?
-            </summary>
-
-            <p>
-            Por ahora, nuestra plataforma permite
-            consultar el inventario disponible.
-            La compra en línea no está habilitada.
-            </p>
-        </details>
-        </section>
-    )
+      <details>
+        <summary>¿Puedo comprar directamente desde la página?</summary>
+        <p>
+          Actualmente, nuestra plataforma permite consultar
+          los productos disponibles y gestionar el inventario.
+          Las compras en línea no están habilitadas.
+        </p>
+      </details>
+    </section>
+  )
 }
 
 export default PreguntasFrecuentes

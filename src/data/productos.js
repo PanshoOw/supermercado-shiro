@@ -1,44 +1,50 @@
 export const productos = [
     {
         id: 1,
-        nombre: "Alimento Premium Perro 3 kg",
-        categoria: "Alimentación",
-        precio: 18990,
-        stock: 25
+        nombre: "Arroz grado 1 1 kg",
+        marca: "Tucapel",
+        tipo: "Abarrotes",
+        precio: 1990,
+        stock: 30
     },
     {
         id: 2,
-        nombre: "Alimento Gato Adulto 2 kg",
-        categoria: "Alimentación",
-        precio: 15990,
-        stock: 18
+        nombre: "Leche entera 1 L",
+        marca: "Colun",
+        tipo: "Lácteos",
+        precio: 1490,
+        stock: 24
     },
     {
         id: 3,
-        nombre: "Pelota de goma",
-        categoria: "Juguetes",
-        precio: 4990,
-        stock: 35
+        nombre: "Aceite vegetal 900 ml",
+        marca: "Chef",
+        tipo: "Abarrotes",
+        precio: 2890,
+        stock: 16
     },
     {
         id: 4,
-        nombre: "Collar ajustable",
-        categoria: "Accesorios",
-        precio: 7990,
-        stock: 12
+        nombre: "Detergente líquido 3 L",
+        marca: "Omo",
+        tipo: "Limpieza",
+        precio: 10990,
+        stock: 10
     },
     {
         id: 5,
-        nombre: "Champú para perros 500 ml",
-        categoria: "Higiene",
-        precio: 6990,
-        stock: 20
+        nombre: "Agua mineral sin gas 1,5 L",
+        marca: "Cachantun",
+        tipo: "Bebidas",
+        precio: 1290,
+        stock: 42
     },
     {
         id: 6,
-        nombre: "Cama acolchada mediana",
-        categoria: "Descanso",
-        precio: 24990,
-        stock: 8
+        nombre: "Papel higiénico 12 rollos",
+        marca: "Confort",
+        tipo: "Higiene",
+        precio: 5990,
+        stock: 20
     }
-];
+]

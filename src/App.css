@@ -35,7 +35,7 @@
 }
 
 /* ========================================
-   3. LOGOTIPO HUELLITAS DE SHIRO
+   3. LOGOTIPO SUPERMERCADO SHIRO
 ======================================== */
 
 .app > header .marca-titulo {
@@ -91,11 +91,13 @@
   border-bottom: 2px solid var(--color-borde);
 }
 
-.app main > section p {
-  font-size: 1rem;
-  line-height: 1.7;
-  color: #546e7a;
-  margin-bottom: 0;
+@layer components {
+  .app main > section p {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: #546e7a;
+    margin-bottom: 0;
+  }
 }
 
 /* ========================================
@@ -206,6 +208,39 @@
 }
 
 /* ========================================
+   PÁGINA 404 - NO ENCONTRADA
+======================================== */
+
+.pagina-no-encontrada {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.pagina-no-encontrada__codigo {
+  font-size: 5rem;
+  font-weight: 800;
+  line-height: 1;
+  color: var(--color-secundario);
+}
+
+.pagina-no-encontrada__enlace {
+  display: inline-block;
+  padding: 12px 24px;
+  margin-top: 10px;
+  background-color: var(--color-primario);
+  color: var(--color-blanco);
+  font-weight: 600;
+  border-radius: 8px;
+  text-decoration: none;
+}
+
+.pagina-no-encontrada__enlace:hover {
+  background-color: var(--color-secundario);
+}
+
+/* ========================================
    9. PÁGINA ¿QUIÉNES SOMOS?
 ======================================== */
 
@@ -305,6 +340,72 @@
   background-color: var(--color-blanco);
   color: var(--color-primario);
   font-weight: 700;
+}
+
+/* ========================================
+   FORMULARIO DE PRODUCTOS
+======================================== */
+
+.formulario-producto {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  width: 100%;
+  max-width: 600px;
+  margin: 30px auto;
+  text-align: left;
+}
+
+.formulario-producto__campo {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.formulario-producto label {
+  font-weight: 600;
+  color: var(--color-primario);
+}
+
+.formulario-producto input,
+.formulario-producto select {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 12px;
+  border: 1px solid var(--color-borde);
+  border-radius: 8px;
+  font: inherit;
+  background-color: var(--color-blanco);
+  color: var(--color-texto);
+}
+
+.formulario-producto button {
+  padding: 14px 24px;
+  border: none;
+  border-radius: 8px;
+  background-color: var(--color-primario);
+  color: var(--color-blanco);
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.formulario-producto button:hover {
+  background-color: var(--color-secundario);
+}
+
+.formulario-producto__resultado {
+  margin-top: 20px;
+  padding: 16px;
+  border: 1px solid var(--color-acento);
+  border-radius: 8px;
+  background-color: var(--color-resaltado);
+}
+
+.formulario-producto__error {
+  margin-top: 20px;
+  font-weight: 600;
+  color: #B42318;
 }
 
 /* ========================================
