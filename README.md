@@ -6,6 +6,19 @@
 
 ---
 
+## 🌐 Aplicación publicada
+
+Supermercado Shiro se encuentra disponible en GitHub Pages.
+
+**Acceder a la aplicación:**
+
+https://panshoow.github.io/supermercado-shiro/
+
+La publicación se realiza automáticamente mediante GitHub Actions
+a partir de los cambios enviados a la rama `main`.
+
+---
+
 ## 📖 Descripción del proyecto
 
 **Supermercado Shiro** es una aplicación web desarrollada con React que simula un sistema de gestión de inventario y carrito de compras para un supermercado.
