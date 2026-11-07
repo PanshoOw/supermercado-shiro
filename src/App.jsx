@@ -7,6 +7,8 @@ import PreguntasFrecuentes from './pages/PreguntasFrecuentes.jsx'
 import Inventario from './pages/Inventario.jsx'
 import PaginaNoEncontrada from './pages/PaginaNoEncontrada.jsx'
 import AgregarProducto from './pages/AgregarProducto.jsx'
+import DetalleProducto from './pages/DetalleProducto.jsx'
+import Carrito from './pages/Carrito.jsx'
 
 import MenuNavegacion from './components/MenuNavegacion.jsx'
 import logoSupermercado from './assets/images/logo-supermercado-shiro.png'
@@ -20,6 +22,7 @@ const titulosPaginas = {
   '/preguntas-frecuentes': 'Preguntas frecuentes | Supermercado Shiro',
   '/inventario': 'Inventario | Supermercado Shiro',
   '/agregar-producto': 'Agregar producto | Supermercado Shiro',
+  '/carrito': 'Carrito de compras | Supermercado Shiro',
 }
 
 function App() {
@@ -27,8 +30,12 @@ function App() {
   const mainRef = useRef(null)
 
   useEffect(() => {
+    const esRutaDetalle = /^\/productos\/[^/]+$/.test(location.pathname)
+
     document.title = titulosPaginas[location.pathname]
-      ?? 'Página no encontrada | Supermercado Shiro'
+      ?? (esRutaDetalle
+        ? 'Detalle del producto | Supermercado Shiro'
+        : 'Página no encontrada | Supermercado Shiro')
 
     mainRef.current?.focus()
   }, [location.pathname])
@@ -56,8 +63,10 @@ function App() {
           <Route path="/quienes-somos" element={<QuienesSomos />} />
           <Route path="/preguntas-frecuentes" element={<PreguntasFrecuentes />} />
           <Route path="/inventario" element={<Inventario />} />
-          <Route path="*" element={<PaginaNoEncontrada />} />
           <Route path="/agregar-producto" element={<AgregarProducto />} />
+          <Route path="/productos/:id" element={<DetalleProducto />} />
+          <Route path="/carrito" element={<Carrito />} />
+          <Route path="*" element={<PaginaNoEncontrada />} />
         </Routes>
       </main>
 

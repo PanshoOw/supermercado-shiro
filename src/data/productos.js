@@ -1,6 +1,6 @@
 export const productos = [
     {
-        id: 1,
+        id: '1',
         nombre: "Arroz grado 1 1 kg",
         marca: "Tucapel",
         tipo: "Abarrotes",
@@ -8,7 +8,7 @@ export const productos = [
         stock: 30
     },
     {
-        id: 2,
+        id: '2',
         nombre: "Leche entera 1 L",
         marca: "Colun",
         tipo: "Lácteos",
@@ -16,7 +16,7 @@ export const productos = [
         stock: 24
     },
     {
-        id: 3,
+        id: '3',
         nombre: "Aceite vegetal 900 ml",
         marca: "Chef",
         tipo: "Abarrotes",
@@ -24,7 +24,7 @@ export const productos = [
         stock: 16
     },
     {
-        id: 4,
+        id: '4',
         nombre: "Detergente líquido 3 L",
         marca: "Omo",
         tipo: "Limpieza",
@@ -32,7 +32,7 @@ export const productos = [
         stock: 10
     },
     {
-        id: 5,
+        id: '5',
         nombre: "Agua mineral sin gas 1,5 L",
         marca: "Cachantun",
         tipo: "Bebidas",
@@ -40,7 +40,7 @@ export const productos = [
         stock: 42
     },
     {
-        id: 6,
+        id: '6',
         nombre: "Papel higiénico 12 rollos",
         marca: "Confort",
         tipo: "Higiene",

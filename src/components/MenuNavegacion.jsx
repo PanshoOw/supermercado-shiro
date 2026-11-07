@@ -16,6 +16,10 @@ function MenuNavegacion() {
         ➕ Agregar producto
       </NavLink>
 
+      <NavLink to="/carrito">
+        🛒 Carrito
+      </NavLink>
+
       <NavLink to="/quienes-somos">
         🐾 Quiénes somos
       </NavLink>

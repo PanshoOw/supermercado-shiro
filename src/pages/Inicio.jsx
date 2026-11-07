@@ -1,5 +1,6 @@
 import { Link } from 'react-router'
 import { useInventario } from '../hooks/useInventario.js'
+import Indicador from '../components/Indicador.jsx'
 import shiroBienvenida from '../assets/images/shiro-bienvenida.png'
 
 function Inicio() {
@@ -56,37 +57,20 @@ function Inicio() {
 
         {/* Indicadores del inventario */}
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-3">
+          <Indicador
+            titulo="Productos registrados"
+            valor={productos.length}
+          />
 
-          <div className="rounded-xl border border-sky-200 bg-sky-50 p-5 text-center">
-            <span className="block text-sm font-semibold text-slate-700">
-              Productos registrados
-            </span>
+          <Indicador
+            titulo="Categorías disponibles"
+            valor={totalCategorias}
+          />
 
-            <strong className="mt-2 block text-3xl text-sky-900">
-              {productos.length}
-            </strong>
-          </div>
-
-          <div className="rounded-xl border border-sky-200 bg-sky-50 p-5 text-center">
-            <span className="block text-sm font-semibold text-slate-700">
-              Categorías disponibles
-            </span>
-
-            <strong className="mt-2 block text-3xl text-sky-900">
-              {totalCategorias}
-            </strong>
-          </div>
-
-          <div className="rounded-xl border border-sky-200 bg-sky-50 p-5 text-center">
-            <span className="block text-sm font-semibold text-slate-700">
-              Unidades en stock
-            </span>
-
-            <strong className="mt-2 block text-3xl text-sky-900">
-              {totalUnidades}
-            </strong>
-          </div>
-
+          <Indicador
+            titulo="Unidades en stock"
+            valor={totalUnidades}
+          />
         </div>
 
         {/* Accesos rápidos */}

@@ -1,6 +1,9 @@
 import { useState } from 'react'
 import { Link } from 'react-router'
 import { useInventario } from '../hooks/useInventario.js'
+import { validarProducto } from '../utils/validarProducto.js'
+import CampoFormulario from '../components/CampoFormulario.jsx'
+import { CATEGORIAS } from '../data/categorias.js'
 
 // Valores iniciales del formulario
 const camposIniciales = {
@@ -28,41 +31,25 @@ function AgregarProducto() {
     }))
   }
 
-  // Registrar un nuevo producto
+  /// Registrar un nuevo producto
   function manejarEnvio(event) {
     event.preventDefault()
 
-    const nombre = formulario.nombre.trim()
-    const marca = formulario.marca.trim()
-    const precio = Number(formulario.precio)
-    const stock = Number(formulario.stock)
+    const resultado = validarProducto(formulario)
 
-    if (
-      !nombre ||
-      !marca ||
-      !formulario.tipo ||
-      !Number.isInteger(precio) ||
-      precio <= 0 ||
-      formulario.stock === '' ||
-      !Number.isInteger(stock) ||
-      stock < 0
-    ) {
-      setError('Verifica los datos ingresados antes de continuar.')
+    if (resultado.error) {
+      setError(resultado.error)
       setMensaje('')
       return
     }
 
-    agregarProducto({
-      nombre,
-      marca,
-      tipo: formulario.tipo,
-      precio,
-      stock
-    })
+    agregarProducto(resultado.producto)
 
     setFormulario({ ...camposIniciales })
     setError('')
-    setMensaje(`El producto "${nombre}" se agregó correctamente.`)
+    setMensaje(
+      `El producto "${resultado.producto.nombre}" se agregó correctamente.`
+    )
   }
 
   return (
@@ -76,78 +63,50 @@ function AgregarProducto() {
 
       <form className="formulario-producto" onSubmit={manejarEnvio}>
 
-        <div className="formulario-producto__campo">
-          <label htmlFor="nombre">Nombre del producto</label>
-          <input
-            type="text"
-            id="nombre"
-            name="nombre"
-            value={formulario.nombre}
-            onChange={manejarCambio}
-            maxLength={100}
-            required
-          />
-        </div>
+        <CampoFormulario
+          nombre="nombre"
+          etiqueta="Nombre del producto"
+          valor={formulario.nombre}
+          onChange={manejarCambio}
+          maxLength={100}
+        />
 
-        <div className="formulario-producto__campo">
-          <label htmlFor="marca">Marca</label>
-          <input
-            type="text"
-            id="marca"
-            name="marca"
-            value={formulario.marca}
-            onChange={manejarCambio}
-            maxLength={60}
-            required
-          />
-        </div>
+        <CampoFormulario
+          nombre="marca"
+          etiqueta="Marca"
+          valor={formulario.marca}
+          onChange={manejarCambio}
+          maxLength={60}
+        />
 
-        <div className="formulario-producto__campo">
-          <label htmlFor="tipo">Tipo de producto</label>
-          <select
-            id="tipo"
-            name="tipo"
-            value={formulario.tipo}
-            onChange={manejarCambio}
-            required
-          >
-            <option value="">Selecciona una categoría</option>
-            <option value="Abarrotes">Abarrotes</option>
-            <option value="Lácteos">Lácteos</option>
-            <option value="Bebidas">Bebidas</option>
-            <option value="Limpieza">Limpieza</option>
-            <option value="Higiene">Higiene</option>
-            <option value="Otros">Otros</option>
-          </select>
-        </div>
+        <CampoFormulario
+          nombre="tipo"
+          etiqueta="Tipo de producto"
+          tipo="select"
+          valor={formulario.tipo}
+          onChange={manejarCambio}
+          opciones={CATEGORIAS}
+        />
 
-        <div className="formulario-producto__campo">
-          <label htmlFor="precio">Precio (CLP)</label>
-          <input
-            type="number"
-            id="precio"
-            name="precio"
-            min="1"
-            step="1"
-            value={formulario.precio}
-            onChange={manejarCambio}
-            required
-          />
-        </div>
+        <CampoFormulario
+          nombre="precio"
+          etiqueta="Precio (CLP)"
+          tipo="number"
+          valor={formulario.precio}
+          onChange={manejarCambio}
+          min="1"
+          step="1"
+        />
 
-        <div className="formulario-producto__campo">
-          <label htmlFor="stock">Cantidad disponible</label>
-          <input
-            type="number"
-            id="stock"
-            name="stock"
-            min="0"
-            step="1"
-            value={formulario.stock}
-            onChange={manejarCambio}
-            required
-          />
-        </div>
+        <CampoFormulario
+          nombre="stock"
+          etiqueta="Cantidad disponible"
+          tipo="number"
+          valor={formulario.stock}
+          onChange={manejarCambio}
+          min="0"
+          step="1"
+        />
 
         <button type="submit">
           Agregar producto
