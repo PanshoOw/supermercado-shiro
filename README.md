@@ -512,7 +512,7 @@ Los productos y precios corresponden a información utilizada con fines académi
 **Código:** PFY2202  
 **Experiencia de aprendizaje:** 1  
 **Semana:** 3  
-**Actividad:** Desarrollando sitios web con React avanzado
+**Actividad:** Desarrollando sitios web con React avanzado  
 **Modalidad:** Individual
 
 ---
