@@ -148,6 +148,15 @@
    7. TABLA DE INVENTARIO
 ======================================== */
 
+.inventario-tabla-scroll {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  -webkit-overflow-scrolling: touch;
+}
+
 .app table {
   width: 100%;
   min-width: 560px;
